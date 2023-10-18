@@ -1,15 +1,14 @@
-// slice.js
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchCountries } from './actions';
 
 const initialState = {
   loading: false,
-  countries: [],
+  ships: [],
   error: null,
 };
 
-const countrySlice = createSlice({
-  name: 'country',
+const shipSlice = createSlice({
+  name: 'ship',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -21,8 +20,7 @@ const countrySlice = createSlice({
       .addCase(fetchCountries.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload,"action")
-        state.countries = action.payload;
-        console.log(state.countries,"state")
+        state.ships = action.payload;
       })
       .addCase(fetchCountries.rejected, (state, action) => {
         state.loading = false;
@@ -31,4 +29,4 @@ const countrySlice = createSlice({
   },
 });
 
-export default countrySlice.reducer;
+export default shipSlice.reducer;

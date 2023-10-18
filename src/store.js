@@ -1,10 +1,9 @@
-// store.js
 import { configureStore } from '@reduxjs/toolkit';
-import countryReducer from './slice';
+import shipReducer from './slice';
 
 const store = configureStore({
   reducer: {
-    country: countryReducer,
+    ship: shipReducer,
   },
 });
 
